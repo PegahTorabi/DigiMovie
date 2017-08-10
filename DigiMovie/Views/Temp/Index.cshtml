@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+
+}
+
+<h2>Index</h2>
+@*@{ int index = 1;}
+@while (index <= 10)
+{
+    <p>salam</p>
+    index++;
+}*@
+
+
+@{ var IsManager = true; var IsAuthn = false;}
+@if (IsManager == true)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        @*<p>welcome manager</p>*@
+        @:welcome manager @*به صورت خطی مینویسد*@
+
+    }
+}
+@if (IsAuthn == true)
+{
+    for (int i = 0; i < 5; i++)
+    {
+        <p>welcome Authn </p>
+    }
+}
+
+<ul>
+    @foreach (var item in Request.ServerVariables)
+    {
+        <li>@item</li>
+    }
+</ul>
