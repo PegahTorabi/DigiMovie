@@ -8,8 +8,20 @@ namespace DigiMovie.Controllers
 {
     public class TempController : Controller
     {
-        // GET: Temp
-        public ActionResult Index()
+        public ActionResult Index() { return View(); }
+
+        [HttpPost]
+        [ActionName("Index")]
+        public ActionResult IndexSent(string firstName, 
+            string lastName ,
+            string password ,
+            string homeAddress,
+            string officeAddress,
+            string phoneNumber,
+            bool agreement,
+            int gender,
+            int city,
+            int fruits)
         {
             return View();
         }

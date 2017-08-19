@@ -6,6 +6,7 @@
     <title>@ViewBag.Title - وب سایت دیجی مووی</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @RenderSection("styles", required: false)
     <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" />
 </head>
 <body dir="rtl">
@@ -41,11 +42,11 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">حساب کاربری <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li><a href="#">ساخت حساب کاربری</a></li>
+                            <li><a href="@Url.Action("Register","Account")"><i class="glyphicon glyphicon-plus-sign"></i>    ساخت حساب کاربری  </a></li>
                             <li class="divider"></li>
-                            <li><a href="#">ورود به حساب کاربری</a></li>
+                            <li><a href="@Url.Action("Login","Account")"><i class="glyphicon glyphicon-ok-sign"></i>  ورود به حساب کاربری</a></li>
                             <li class="divider"></li>
-                            <li><a href="#">خروج از حساب کاربری</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-minus-sign"></i>  خروج از حساب کاربری  </a></li>
                         </ul>
                     </li>
                 </ul>

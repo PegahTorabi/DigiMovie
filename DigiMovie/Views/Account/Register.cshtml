@@ -2,8 +2,10 @@
 @{
     ViewBag.Title = "Register";
 }
-
-<h2>@ViewBag.Title.</h2>
+@*@section styles{
+    <link href="~/Content/foxholder-styles.css" rel="stylesheet" />
+}*@
+<h2>ViewBag.Title</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
@@ -35,7 +37,34 @@
         </div>
     </div>
 }
+@*<div class="form-container-10">
+    <form>
+        <hr />
+        <input id="first-input-10" type="text" placeholder="نام" required class="w3-card-8" />
+        <input id="second-input-10" type="text" placeholder="نام خانوادگی" required class="w3-card-8" />
+        <input id="second-input-10" type="email" placeholder="ایمیل" required class="w3-card-8" />
+        <input id="second-input-10" type="password" placeholder="رمز عبور" required class="w3-card-8" />
+        <hr />
+        <input type="radio" id="fmale" name="fmale" placeholder="خانم" />
 
-@section Scripts {
+        <input type="radio" id="male" name="fmale" placeholder="آقا" />
+        <hr />
+        <div class="container w3-border-black w3-round w3-card-4">
+            <ul>
+                <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
+                <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
+                <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
+            </ul>
+            <br />
+            <input type="checkbox" id="sharayet" name="sharayet" placeholder="قبول دارم" />
+        </div>
+        <br />
+        <button type="submit">ثبت نام</button>
+    </form>
+</div>
+@section scripts{
+    <script src="~/Scripts/foxholder.js"></script>
+    <script src="~/Scripts/script.js"></script>}*@
+@*@section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
-}
+}*@
