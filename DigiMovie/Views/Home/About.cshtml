@@ -1,10 +1,32 @@
 ﻿@{
     ViewBag.Title = "درباره ی ما";
+    if (ViewBag.Theme != null)
+    {
+        Layout = ViewBag.Theme;
+    }
 }
 @section styles{
     <link href="~/Content/foxholder-styles.css" rel="stylesheet" />
     <link href="~/Content/toastr.min.css" rel="stylesheet" />
 }
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @Html.DropDownList("theme",
+       new SelectList(new List<object> {
+           new { Id = 1, Name = "انتخاب پس زمینه" },
+        new { Id = 2, Name = "پس زمینه سفید" },
+        new { Id = 3, Name = "پس زمینه مشکی سفید" },
+        new { Id = 4, Name = "پس زمینه سفید آبی" },
+        new { Id = 5, Name = "پس زمینه تیره" },
+        new { Id = 6, Name = "پس زمینه سفید قرمز" }
+    }, "Id", "Name", 1, new int[1] { 1 }),
+        new { @class = "form-control", onchange = "this.form.submit()" })
+        </div>
+    </div>
+}
+<br style="line-height:20px;" />
 <h2>فرم انتقاد و پیشنهادات</h2>
 <div class="form-container-10">
     <form action="/Home/SendEmail" method="post">

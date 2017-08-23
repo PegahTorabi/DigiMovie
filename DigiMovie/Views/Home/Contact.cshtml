@@ -1,9 +1,31 @@
 ﻿@{
     ViewBag.Title = "ارتباط با ما";
+    if (ViewBag.Theme != null)
+    {
+        Layout = ViewBag.Theme;
+    }
 }
 @section styles{
     <link href="~/Content/foxholder-styles.css" rel="stylesheet" />
 }
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="form-group col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            @Html.DropDownList("theme",
+       new SelectList(new List<object> {
+           new { Id = 1, Name = "انتخاب پس زمینه" },
+        new { Id = 2, Name = "پس زمینه سفید" },
+        new { Id = 3, Name = "پس زمینه مشکی سفید" },
+        new { Id = 4, Name = "پس زمینه سفید آبی" },
+        new { Id = 5, Name = "پس زمینه تیره" },
+        new { Id = 6, Name = "پس زمینه سفید قرمز" }
+    }, "Id", "Name", 1, new int[1] { 1 }),
+        new { @class = "form-control", onchange = "this.form.submit()" })
+        </div>
+    </div>
+}
+<br style="line-height:20px;" />
 @*mtn etela resani*@
 <div class="w3-padding w3-section w3-border-orange w3-gray container w3-round w3-center"><span class="w3-right w3-large"><i class="glyphicon glyphicon-user"></i>کاربر محترم برای اطلاع از خبرنامه های فیلم ها و سریال های ما متوانید ایمیل خود را در قسمت مورد نظر وارد نماید.</span>
     </div>

@@ -31,6 +31,21 @@ namespace DigiMovie
 
             bundles.Add(new StyleBundle("~/Owl/css").Include(
                 "~/Content/owl.carousel.css", "~/Content/owl.theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css-Simplex-Theme").Include("~/Content/Simplex-bootstrap.css",
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css-Simplex-Theme").Include("~/Content/Yeti-bootstrap.css",
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css-Simplex-Theme").Include("~/Content/Darkly-bootstrap.css",
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css-Simplex-Theme").Include("~/Content/Cerulean-bootstrap.css",
+                      "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/css-Simplex-Theme").Include("~/Content/Readable-bootstrap.css",
+                      "~/Content/bootstrap.css"));
         }
     }
 }

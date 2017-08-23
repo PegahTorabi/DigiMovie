@@ -15,12 +15,73 @@ namespace DigiMovie.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [ActionName("Index")]
+        public ActionResult IndexTheme()
+        {
+            string name = "";
+            int ThemeName = Convert.ToInt16(Request.Form["theme"]);
+            if (ThemeName == 2)
+            {
+                name = "Simplex";
+            }
+            else if (ThemeName == 3)
+            {
+                name = "Yeti";
+            }
+            else if (ThemeName == 4)
+            {
+                name = "Readable";
+            }
+            else if (ThemeName == 5)
+            {
+                name = "Darkly";
+            }
+            else if (ThemeName == 6)
+            {
+                name = "Cerulean";
+            }
+            ViewBag.Theme = "~/views/shared/_" + name + "ThemeLayout.cshtml";
+            return View();
+        }
 
         [Route("DigiMovie/About Us")]
         public ActionResult About()
         {
             return View();
         }
+
+        [HttpPost]
+        [ActionName("About")]
+        [Route("DigiMovie/About Us")]
+        public ActionResult AboutTheme()
+        {
+            string name = "";
+            int ThemeName = Convert.ToInt16(Request.Form["theme"]);
+            if (ThemeName == 2)
+            {
+                name = "Simplex";
+            }
+            else if (ThemeName == 3)
+            {
+                name = "Yeti";
+            }
+            else if (ThemeName == 4)
+            {
+                name = "Readable";
+            }
+            else if (ThemeName == 5)
+            {
+                name = "Darkly";
+            }
+            else if (ThemeName == 6)
+            {
+                name = "Cerulean";
+            }
+            ViewBag.Theme = "~/views/shared/_" + name + "ThemeLayout.cshtml";
+            return View();
+        }
+
         [HttpPost]
         public ActionResult SendEmail()
         {
@@ -52,12 +113,43 @@ namespace DigiMovie.Controllers
                 ViewBag.message = 0;
             }
             return View("About");
-            }
+        }
         [Route("DigiMovie/Contact Us")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
+            return View();
+        }
+
+        [HttpPost]
+        [ActionName("Contact")]
+        [Route("DigiMovie/Contact Us")]
+        public ActionResult ContactTheme()
+        {
+            string name = "";
+            int ThemeName = Convert.ToInt16(Request.Form["theme"]);
+            if (ThemeName == 2)
+            {
+                name = "Simplex";
+            }
+            else if (ThemeName == 3)
+            {
+                name = "Yeti";
+            }
+            else if (ThemeName == 4)
+            {
+                name = "Readable";
+            }
+            else if (ThemeName == 5)
+            {
+                name = "Darkly";
+            }
+            else if (ThemeName == 6)
+            {
+                name = "Cerulean";
+            }
+            ViewBag.Theme = "~/views/shared/_" + name + "ThemeLayout.cshtml";
             return View();
         }
 

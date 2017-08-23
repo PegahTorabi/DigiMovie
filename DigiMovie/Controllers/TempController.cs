@@ -8,7 +8,10 @@ namespace DigiMovie.Controllers
 {
     public class TempController : Controller
     {
-        public ActionResult Index() { return View(); }
+        public ActionResult Index()
+        {
+            return View();
+        }
 
         [HttpPost]
         [ActionName("Index")]
@@ -25,5 +28,6 @@ namespace DigiMovie.Controllers
         {
             return View();
         }
+
     }
 }

@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@section styles{
+<link href="~/Content/w3.css" rel="stylesheet" />}
+
+@Ajax.ActionLink("متن لینک", "AjaxActionLinkProcess", "Test", new AjaxOptions {
+    UpdateTargetId = "payam",
+    InsertionMode=InsertionMode.Replace,
+    LoadingElementId= "wait",
+    LoadingElementDuration = 1000,
+    HttpMethod = "post",
+    OnBegin = "OnBegin",
+    OnComplete = "OnComplete",
+    OnSuccess = "OnSuccess",
+    OnFailure = "OnFailure"
+
+})
+<br />
+<h2 id="payam"  style="color:red"></h2>
+<div class="navbar-fixed-top" style="width:100%; height:100%; opacity:0.5; background-color:black; display:none;" id="wait">
+    <div class="w3-center">
+        <p style="margin-top:250px;"><i class="glyphicon glyphicon-asterisk w3-text-white w3-spin w3-jumbo"></i></p>
+    </div>
+</div>
+
+<p>
+    userName :
+    <input type="text" id="name"/>
+</p>
+<p>
+    <input type="submit" id="send"/>
+</p>
+<h2  style="color:yellow">@(((DigiMovie.Models.Movie)ViewData["movie"]).Id)</h2>
+    <h2  style="color:yellow">@(((DigiMovie.Models.Movie)ViewData["movie"]).Name)</h2>
+<h2  style="color:green">@(((DigiMovie.Models.Movie)ViewBag.message).Id)</h2>
+<h2  style="color:green">@(((DigiMovie.Models.Movie)ViewBag.message).Name)</h2>
+
+
+@section scripts{
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+    <script>
+        $('#send').on('click', function () {
+            $.ajax({
+                url: '/Test/RowAjaxProcess',
+                data: {
+                    name: $('#name').val()
+                },
+                method: 'get',
+                success: function (d) {
+                    console.log(d.Id);
+                    console.log(d.Name);
+                    console.log(d.age);
+                }
+            });
+        });
+    </script>
+    <script>
+        function OnBegin() {
+            alert("قبل ارسال درخواست");
+        }
+        function OnComplete() {
+            alert("کامل شدن درخواست");
+        }
+        function OnSuccess() {
+            alert("موفقیت  درخواست");
+        }
+        function OnFailure() {
+            alert("عدم موفقیت درخواست");
+        }
+    </script>
+    }

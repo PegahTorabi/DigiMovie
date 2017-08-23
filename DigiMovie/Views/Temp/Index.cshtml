@@ -3,7 +3,7 @@
     ViewBag.Title = "Index";
 
 }
-@section styles{
+@*@section styles{*@
 
 @*<h2>Index</h2>*@
 @*@{ int index = 1;}
@@ -74,108 +74,110 @@
 
 
 @using (Html.BeginForm())
-{
-    @Html.Label("header", "اطلاعات اکانت :", new { @class = "text-center w3-xlarge" })
-    <hr />
-    <div class="container">
-        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("password", "رمز عبور : ")
-            @Html.Password("password", null, new { @class = "form-control", placeholder = "رمز عبور خود را وارد نمایید" })
+    {
+        @Html.Label("header", "اطلاعات اکانت :", new { @class = "text-center w3-xlarge" })
+        <hr />
+        <div class="container">
+            <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("password", "رمز عبور : ")
+                @Html.Password("password", null, new { @class = "form-control", placeholder = "رمز عبور خود را وارد نمایید" })
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("lastName", "نام خانوادگی : ")
+                @Html.TextBox("lastName", null, new { @class = "form-control", placeholder = "نام خانوادگی خود را وارد نمایید" })
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("firstName", "نام : ")
+                @Html.TextBox("firstName", null, new
+           {
+               @class = "form-control",
+               placeholder = "نام خود را وارد نمایید",
+               type = "text",
+               data_tooltip = "ehsan"
+           })
+            </div>
         </div>
-        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("lastName", "نام خانوادگی : ")
-            @Html.TextBox("lastName", null, new { @class = "form-control", placeholder = "نام خانوادگی خود را وارد نمایید" })
+        @Html.Label("header", "اطلاعات مکانی :", new { @class = "text-center w3-xlarge" })
+        <hr />
+        <div class="container">
+            <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("homeAddress", "آدرس منزل : ")
+                @Html.TextArea("homeAddress", null, 1, 0, new { @class = "form-control", })
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("officeAddress", "آدرس محل کار: ")
+                @Html.TextArea("officeAddress", null, 1, 0, new { @class = "form-control", })
+            </div>
+            <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("phoneNumber", "تلفن : ")
+                @Html.TextBox("phoneNumber", null, new { @class = "form-control", Type = "number", placeholder = "شماره ثابت را بدون کد شهری وارد نمایید." })
+            </div>
         </div>
-        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("firstName", "نام : ")
-            @Html.TextBox("firstName", null, new
-       {
-           @class = "form-control",
-           placeholder = "نام خود را وارد نمایید",
-           type = "text",
-           data_tooltip = "ehsan"
-       })
+        @Html.Label("header", "شرایط و ضوابط :", new { @class = "text-center w3-xlarge" })
+        <hr />
+        <div class="container w3-border-black w3-card-12">
+            <ul>
+                <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
+                <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
+                <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
+            </ul>
+            <br />
+            <div class="checkbox">
+                @Html.Label("agreement", "من شرایط عضویت در وب سایت را مطالعه نمودم ")
+                @Html.CheckBox("agreement", true, new { @class = "pull-right", style = "margin-left : 10px" })
+            </div>
         </div>
-    </div>
-    @Html.Label("header", "اطلاعات مکانی :", new { @class = "text-center w3-xlarge" })
-    <hr />
-    <div class="container">
-        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("homeAddress", "آدرس منزل : ")
-            @Html.TextArea("homeAddress", null, 1, 0, new { @class = "form-control", })
-        </div>
-        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("officeAddress", "آدرس محل کار: ")
-            @Html.TextArea("officeAddress", null, 1, 0, new { @class = "form-control", })
-        </div>
-        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("phoneNumber", "تلفن : ")
-            @Html.TextBox("phoneNumber", null, new { @class = "form-control", Type = "number", placeholder = "شماره ثابت را بدون کد شهری وارد نمایید." })
-        </div>
-    </div>
-    @Html.Label("header", "شرایط و ضوابط :", new { @class = "text-center w3-xlarge" })
-    <hr />
-    <div class="container w3-border-black w3-card-12">
-        <ul>
-            <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
-            <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
-            <li>لطفا اطلاعات خود را با صحت کامل وارد نمایید.</li>
-        </ul>
         <br />
-        <div class="checkbox">
-            @Html.Label("agreement", "من شرایط عضویت در وب سایت را مطالعه نمودم ")
-            @Html.CheckBox("agreement", true, new { @class = "pull-right", style = "margin-left : 10px" })
-        </div>
-    </div>
-    <br />
-    @Html.Label("header", "اطلاعات شخصی :", new { @class = "text-center w3-xlarge" })
-    <hr />
-    <div class="container">
-        <div class="checkbox col-lg-4 col-md-4 col-sm-12 col-xs-12">
-            @Html.Label("male-fmale", "جنسیت : ", new { @class = "w3-medium" })
+        @Html.Label("header", "اطلاعات شخصی :", new { @class = "text-center w3-xlarge" })
+        <hr />
+        <div class="container">
+            <div class="checkbox col-lg-4 col-md-4 col-sm-12 col-xs-12">
+                @Html.Label("male-fmale", "جنسیت : ", new { @class = "w3-medium" })
+                <div class="radio">
+                    @Html.Label("male", "مرد  ")
+                @Html.RadioButton("gender", 1, true, new { id = "male" })
+            </div>
             <div class="radio">
-                @Html.Label("male", "مرد  ")
-            @Html.RadioButton("gender", 1, true, new { id = "male" })
-        </div>
-        <div class="radio">
-            @Html.Label("female", "زن  ")
-            @Html.RadioButton("gender", 2, false, new { id = "female" })
-        </div>
+                @Html.Label("female", "زن  ")
+                @Html.RadioButton("gender", 2, false, new { id = "female" })
+            </div>
 
+        </div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @Html.Label("city", "محل تولد : ")
+            @Html.DropDownList("city",
+           new SelectList(new List<object> {
+               new { Id = 1, Name = "لطفاً یک شهر را انتخاب نمایید" },
+            new { Id = 2, Name = "تهران" },
+            new { Id = 3, Name = "شیراز" },
+            new { Id = 4, Name = "ساری" },
+            new { Id = 5, Name = "خرم آباد" },
+            new { Id = 6, Name = "اردبیل" }
+        }, "Id", "Name", 1, new int[1] { 1 }),
+            new { @class = "form-control" })
+        </div>
+        <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+            @Html.Label("fruits", "میوه های مورد علاقه : ")
+            @Html.DropDownList("fruits",
+            new SelectList(new List<object> {
+            new { Id = 1, Name = "لطفاً میوه های مورد علاقه خود را انتخاب نمایید" },
+            new { Id = 2, Name = "گلابی" },
+            new { Id = 3, Name = "سیب" },
+            new { Id = 4, Name = "توت فرنگی" },
+            new { Id = 5, Name = "موز" },
+            new { Id = 6, Name = "هندوانه" },
+            }, "Id", "Name", 1, new int[1] { 1 }), new { @class = "form-control" })
+        </div>
     </div>
-    <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        @Html.Label("city", "محل تولد : ")
-        @Html.DropDownList("city",
-       new SelectList(new List<object> {
-           new { Id = 1, Name = "لطفاً یک شهر را انتخاب نمایید" },
-        new { Id = 2, Name = "تهران" },
-        new { Id = 3, Name = "شیراز" },
-        new { Id = 4, Name = "ساری" },
-        new { Id = 5, Name = "خرم آباد" },
-        new { Id = 6, Name = "اردبیل" }
-    }, "Id", "Name", 1, new int[1] { 1 }),
-        new { @class = "form-control" })
-    </div>
-    <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
-        @Html.Label("fruits", "میوه های مورد علاقه : ")
-        @Html.DropDownList("fruits",
-        new SelectList(new List<object> {
-        new { Id = 1, Name = "لطفاً میوه های مورد علاقه خود را انتخاب نمایید" },
-        new { Id = 2, Name = "گلابی" },
-        new { Id = 3, Name = "سیب" },
-        new { Id = 4, Name = "توت فرنگی" },
-        new { Id = 5, Name = "موز" },
-        new { Id = 6, Name = "هندوانه" },
-        }, "Id", "Name", 1, new int[1] { 1 }), new { @class = "form-control" })
-    </div>
-</div>
-    <div class="form-group">
-        <button type="submit" class="btn btn-primary">
-            <span class="glyphicon glyphicon-send"></span>
-            ثبت نام
-        </button>
-    </div>
-}
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-send"></span>
+                ثبت نام
+            </button>
+        </div>
+    }
+
 @section scripts{
     <script src="~/Scripts/foxholder.js"></script>
-    <script src="~/Scripts/script.js"></script>}
+    <script src="~/Scripts/script.js"></script>
+}
